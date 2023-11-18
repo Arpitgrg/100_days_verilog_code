@@ -9,8 +9,8 @@ Verilog code: All of the RTL designs are implemented in Verilog code, which is a
 Detailed explanations: Each RTL design is accompanied by a detailed explanation of its functionality and implementation.
 
 Benefits:
-Improve your RTL design skills
-Gain hands-on experience in designing digital circuits using Verilog
-Learn about a variety of RTL design topics
-Build a portfolio of Verilog code examples
-Connect with other RTL designers and share your knowledge
+Improve your RTL design skills     
+Gain hands-on experience in designing digital circuits using Verilog       
+Learn about a variety of RTL design topics      
+Build a portfolio of Verilog code examples       
+Connect with other RTL designers and share your knowledge    
