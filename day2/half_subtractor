@@ -1,0 +1,9 @@
+module half_subtractor(
+    input a_in,
+    input b_in,
+    output diff,
+    output borrow
+    );
+    assign diff=a_in^b_in;
+    assign borrow=(~a_in)&b_in;
+endmodule
