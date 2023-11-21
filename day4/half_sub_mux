@@ -1,0 +1,12 @@
+`timescale 1ns / 1ps
+
+module half_sub_mux(
+input a_in,
+input b_in,
+output diff,
+output borrow
+    );
+    
+ assign diff = a_in ? ~b_in: b_in;
+ assign borrow = a_in ? 0 : b_in;   
+endmodule
