@@ -36,9 +36,9 @@ end
 else 
 begin
     if(!shift_n)
-        q_out <= {q_out[6:0],1'b0};
+        q_out <= d_in <<1'b1;
     else 
-        q_out <= {1'b0,q_out[7:1]};
+        q_out <= d_in >> 1'b1;
 end
 end
 endmodule
