@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 28.11.2023 00:51:54
+// Create Date: 30.11.2023 16:33:24
 // Design Name: 
-// Module Name: up_counter
+// Module Name: tb_down_counter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,16 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module up_counter(
-    input clk,
-    input rst,
-    output reg [3:0] count
-    );
-    always@(posedge clk ,negedge rst)
-    begin
-    if(!rst)
-    count<='b0;
-    else
-    count<=count+'b1;
-    end
+module tb_down_counter();
+    reg clk;
+    reg rst;
+    wire [3:0] count;
+    down_counter DUT(.clk(clk),.rst(rst),.count(count));
+always #5 clk=~clk;
+always #200 rst= 'b1;
+initial
+begin
+$monitor("time=%0t ,clk=%0b, rst=%0b, count=%0h", 
+$time, clk,rst,count);
+clk='b0;
+#10 rst='b0;
+#500 $finish();
+end  
 endmodule
