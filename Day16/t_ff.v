@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 28.11.2023 00:29:45
+// Create Date: 28.11.2023 00:49:08
 // Design Name: 
-// Module Name: sr_ff
+// Module Name: t_ff
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module sr_ff(
-    input s,
-    input r,
+module t_ff(
+    input t,
     input clk,
     input reset,
     output reg q,
@@ -34,12 +33,7 @@ module sr_ff(
     q<='b0;
     else
     begin
-        case({s,r})
-        2'b00:q<=q;
-        2'b01:q<='b0;
-        2'b10:q<='b1;
-        2'b11:q<='bx;
-        endcase
+    q<=(t?~q:q);
     end
     end
    assign q_bar =~q;
