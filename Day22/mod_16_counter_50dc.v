@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01.12.2023 07:50:56
+// Create Date: 01.12.2023 07:56:26
 // Design Name: 
-// Module Name: mod_8_counter_50dc
+// Module Name: mod_16_counter_50dc
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mod_8_counter_50dc(
+module mod_16_counter_50dc(
    input clk,
     input rst,
-    output reg [3:0] count,
     output y_out
     );
+     reg [3:0] count;
     always@(posedge clk ,negedge rst)
     begin
-    if(!rst || count>4'b0110)
+    if(!rst)
     count<='b0;
     else
     count<=count+'b1;
     end
-    assign y_out=count[2];
+    assign y_out=count[3];
 endmodule
